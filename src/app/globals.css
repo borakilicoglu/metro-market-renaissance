@@ -2,32 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+  font-size: 10px;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-weight: 400;
+  color: #1f2043;
+  font-size: 1.4rem;
+  background-color: #fff;
+  letter-spacing: -0.015em;
+  opacity: 1;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 @layer utilities {
-  .text-balance {
+  /* .text-balance {
     text-wrap: balance;
-  }
+  } */
+}
+
+.swiper-button-disabled {
+  opacity: 0.2;
+}
+
+.swiper-pagination {
+  overflow: hidden;
+  border-radius: 0.6rem;
+  gap: 0.2rem;
+  margin-top: 0.5rem;
+  display: flex;
+}
+
+.swiper-pagination-bullet {
+  cursor: pointer;
+  height: 7px;
+  background: #e5eaf0;
+}
+
+.swiper-pagination-bullet-active {
+  background: #1a3c7b;
+}
+
+.swiper-slide {
+  border-radius: 0.6rem;
+}
+
+.swiper-wrapper {
+  border-radius: 0.6rem;
+}
+
+.swiper-slide-prev .plus {
+  visibility: hidden;
+}
+
+:disabled {
+  opacity: 0.2;
+}
+
+.swiper-horizontal {
+  margin: 0 -1.5rem !important;
+  padding: 0 1.5rem !important;
 }

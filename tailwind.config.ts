@@ -8,10 +8,28 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-raleway)"],
+      },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "header-gradient": "linear-gradient(90deg, #1A3C7B 0%, #1e2044 100%)", // Custom gradient name
+      },
+      colors: {
+        primary: "#1a3c7b",
+        dark: "#1f2043",
+        smoke: "#ecf0f4",
+        clay: "#6f7e8f",
+        secondary: "#ffe500",
+      },
+      container: {
+        center: true, // Centers the container
+        screens: {
+          sm: "640px", // Custom width for small screens
+          md: "768px", // Custom width for medium screens
+          lg: "1024px", // Custom width for large screens
+          xl: "1280px", // Custom width for extra large screens
+          "2xl": "1280px", // Custom width for 2xl screens
+        },
       },
     },
   },
