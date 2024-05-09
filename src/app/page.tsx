@@ -1,5 +1,7 @@
+"use client";
+
 import dynamic from "next/dynamic";
-import { Navbar, Categories, Footer, Banner } from "./components";
+import { Navbar, Categories, Footer, Banner } from "@/app/components";
 import {
   hero,
   showcase,
@@ -8,6 +10,7 @@ import {
   prodcutsSecondary,
   banners,
 } from "@/data";
+import { useWindowWidth } from "@/hooks/useWindowWidth";
 
 // Notice how we directly access the default export
 const Slider = dynamic(
@@ -28,8 +31,8 @@ export default function Home() {
       <Navbar />
       <div className="flex flex-col space-y-16">
         <Slider content={hero} showPagination={true} />
-        <Slider content={showcase} perView={3} />
-        <Slider content={miniSlide} perView={4} shadow={true} />
+        <Slider content={showcase} perView={[1, 3]} />
+        <Slider content={miniSlide} perView={[2, 4]} shadow={true} />
         <Categories title="Tüm Kategoriler" products={products} />
         <Banner
           alt="Banner"
@@ -43,7 +46,7 @@ export default function Home() {
           content={prodcutsSecondary}
           title="Sizin İçin Seçtiklerimiz"
           shadow={true}
-          perView={6}
+          perView={[3, 6]}
           card={true}
         />
         <Banner content={banners} board={false} />
@@ -51,7 +54,7 @@ export default function Home() {
           content={prodcutsSecondary}
           title="Çok Satılan Ürünler"
           shadow={true}
-          perView={6}
+          perView={[3, 6]}
           card={true}
         />
       </div>

@@ -2,7 +2,7 @@ import React from "react";
 
 export function FooterBottom() {
   return (
-    <div className="container mx-auto bg-white flex items-center justify-between py-6">
+    <div className="container mx-auto bg-white flex items-center justify-between py-6 px-8 md:px-0">
       <div>
         <span>© METRO Türkiye 2022</span>
       </div>

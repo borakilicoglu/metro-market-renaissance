@@ -14,23 +14,27 @@ import {
 import "swiper/css";
 import "swiper/css/navigation";
 
+import { useWindowWidth } from "@/hooks/useWindowWidth";
+
 // Accept props in the Hero function
 export default function Slider({
   card = false,
   title = "",
   content,
-  perView = 1,
+  perView = [1, 1],
   showPagination = false,
   shadow = false,
 }: {
   card?: boolean;
   title?: string;
   content: any;
-  perView?: number;
+  perView?: number[];
   showPagination?: boolean;
   shadow?: boolean;
 }) {
   const [navVisible, setNavVisible] = useState(false);
+  const width = useWindowWidth();
+  const isMobile = width < 768;
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -46,7 +50,7 @@ export default function Slider({
     },
   };
 
-  function generateRandomWord(length = 8) {
+  function generateRandomClass(length = 8) {
     const characters = "abcdefghijklmnopqrstuvwxyz";
     return Array.from(
       { length },
@@ -54,11 +58,13 @@ export default function Slider({
     ).join("");
   }
 
-  const left = generateRandomWord();
-  const right = generateRandomWord();
+  const left = generateRandomClass();
+  const right = generateRandomClass();
 
   return (
-    <div className={`container mx-auto items-center flex flex-col`}>
+    <div
+      className={`container mx-auto items-center flex flex-col px-8 md:px-0`}
+    >
       <div className="flex w-full">
         {title ? (
           <h3 className="text-left text-dark font-[800] text-[1.6rem]">
@@ -68,7 +74,7 @@ export default function Slider({
       </div>
       <div className="container mx-auto items-center flex">
         <button
-          className={`${left} -ml-12 ${
+          className={`hidden md:block ${left} -ml-12 ${
             navVisible
               ? "opacity-100"
               : "opacity-0 transition-opacity duration-500"
@@ -80,7 +86,7 @@ export default function Slider({
         </button>
         <Swiper
           spaceBetween={20}
-          slidesPerView={perView}
+          slidesPerView={isMobile ? perView[0] : perView[1]}
           pagination={showPagination ? pagination : false}
           modules={[Pagination, Navigation]}
           navigation={{ nextEl: `.${right}`, prevEl: `.${left}` }}
@@ -128,7 +134,7 @@ export default function Slider({
           ))}
         </Swiper>
         <button
-          className={`${right} -mr-12 ${
+          className={`hidden md:block ${right} -mr-12 ${
             navVisible
               ? "opacity-100"
               : "opacity-0 transition-opacity duration-500"

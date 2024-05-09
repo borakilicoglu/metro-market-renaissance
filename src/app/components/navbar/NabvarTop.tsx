@@ -9,11 +9,16 @@ import {
 import { MegaphoneIcon, UserCircleIcon } from "@heroicons/react/24/outline";
 
 export const NabvarTop = () => (
-  <div className="bg-header-gradient">
-    <div className="min-h-[80px] container mx-auto flex items-center justify-between">
+  <div className="bg-header-gradient px-4 md:px-0">
+    <div className="lg:h-[80px] h-[73.38px] container mx-auto flex items-center justify-between">
+      <div className="md:hidden flex items-center justify-between space-x-4">
+        <Bars3Icon className="text-secondary w-14" />
+        <MagnifyingGlassIcon className="text-secondary w-14" />
+      </div>
+
       <Logo />
 
-      <div className="flex flex-grow space-x-4 mx-[5.5rem]">
+      <div className="lg:flex flex-grow space-x-4 mx-[5.5rem] hidden">
         <button className="items-center bg-secondary text-primary justify-between inline-flex min-w-[160px] min-h-[40px] rounded-lg px-8">
           <span className="text-[1.4rem] font-[600]">Kategoriler</span>
           <span>
@@ -37,24 +42,26 @@ export const NabvarTop = () => (
 
       <div className="flex space-x-8 items-center justify-between">
         <Link
-          className="text-white flex items-center justify-between space-x-4"
+          className="text-white lg:flex items-center justify-between space-x-4 hidden"
           href="/"
         >
-          <MegaphoneIcon className="text-white w-8" />
+          <MegaphoneIcon className="text-white min-w-8 h-8" />
           <span>Kampanyalar</span>
         </Link>
         <Link
-          className="text-white flex items-center justify-between space-x-4 texzt-[1.4rem]"
+          className="text-white lg:flex items-center justify-between space-x-4 texzt-[1.4rem] hidden"
           href="/"
         >
-          <UserCircleIcon className="text-white w-8" />
+          <UserCircleIcon className="text-white min-w-8 h-8" />
           <span>Giriş Yap</span>
         </Link>
-        <button className="bg-secondary text-primary rounded-md h-[40px] flex items-center text-[lg4rem]">
+        <button className="bg-secondary text-primary rounded-md h-[40px] flex items-center text-[1.4rem] w-[88.19px] md:w-auto">
           <span className="w-[40px] h-[40px] px-4 flex items-center rounded-l-md bg-[#faef59]">
             <ShoppingCartIcon className="w-8" />
           </span>
-          <span className="rounded-lg min-w-[10rem] font-bold">₺ 0,00</span>
+          <span className="rounded-lg w-[5rem] md:w-[10rem] font-bold">
+            ₺ 0,00
+          </span>
         </button>
       </div>
     </div>

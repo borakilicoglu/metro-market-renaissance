@@ -2,7 +2,7 @@ import { NabvarTop, NavbarMiddle, NavbarBottom } from ".";
 
 export function Navbar() {
   return (
-    <header className="min-h-[80px] w-full">
+    <header className="w-full">
       <NabvarTop />
       <NavbarMiddle />
       <NavbarBottom />

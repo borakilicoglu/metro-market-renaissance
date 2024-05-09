@@ -16,7 +16,7 @@ export const Banner = ({
   imageUrl?: string;
 }) => {
   return (
-    <section className="container mx-auto">
+    <section className="container mx-auto px-8 md:px-0">
       {!board ? (
         <div className={"flex space-x-8"}>
           {content?.map((banner: any, index: number) => (

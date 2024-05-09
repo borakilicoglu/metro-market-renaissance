@@ -24,19 +24,19 @@ export function Categories({
   products: any[];
 }) {
   return (
-    <div className="container mx-auto flex flex-col space-y-8">
+    <div className="container mx-auto flex flex-col space-y-8 px-8 md:px-0">
       <div className="flex">
         <h3 className="text-dark font-[800] text-[1.6rem]">{title}</h3>
       </div>
-      <div className="grid grid-cols-9 gap-[2rem]">
-        <div className="col-start-1 col-end-3">
+      <div className="grid grid-cols-4 lg:grid-cols-9 gap-[2rem]">
+        <div className="col-start-1 col-end-3 lg:col-start-1 lg:col-end-3">
           <Badge title="İndirimli Ürünler" />
         </div>
-        <div className="col-start-3 col-end-5">
+        <div className="col-start-3 col-end-5 lg:col-start-3 lg:col-end-5">
           <Badge title="Yeni Ürünler" />
         </div>
       </div>
-      <div className="grid grid-cols-9 gap-[2rem]">
+      <div className="grid grid-cols-4 lg:grid-cols-9 gap-[2rem]">
         {products.map((item, index) => (
           <div
             key={index}

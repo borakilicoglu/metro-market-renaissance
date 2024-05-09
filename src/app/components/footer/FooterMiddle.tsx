@@ -38,8 +38,8 @@ const institutional = [
 export function FooterMiddle() {
   return (
     <div className="bg-smoke">
-      <div className="container mx-auto flex py-[3.7rem]">
-        <div className="w-1/5">
+      <div className="container mx-auto flex flex-col md:flex-row py-[3.7rem] space-y-16 md:space-y-0 px-8 md:px-0">
+        <div className="w-full md:w-1/5">
           <h4 className="text-dark mb-[2rem] font-[700]">Kategroiler</h4>
           <ul className="flex flex-col space-y-[0.8rem]">
             {categories.slice(0, 9).map((item: any) => (
@@ -49,7 +49,7 @@ export function FooterMiddle() {
             ))}
           </ul>
         </div>
-        <div className="w-1/5">
+        <div className="w-full md:w-1/5">
           <h4 className="text-dark mb-[2rem] font-[700]"></h4>
           <ul className="flex flex-col space-y-[0.8rem]">
             {categories.slice(9, 20).map((item: any) => (
@@ -59,7 +59,7 @@ export function FooterMiddle() {
             ))}
           </ul>
         </div>
-        <div className="w-1/5">
+        <div className="w-full md:w-1/5">
           <h4 className="text-dark mb-[2rem] font-[700]">Hesabım</h4>
           <ul className="flex flex-col space-y-[0.8rem]">
             {account.map((item: any) => (
@@ -69,7 +69,7 @@ export function FooterMiddle() {
             ))}
           </ul>
         </div>
-        <div className="w-1/5">
+        <div className="w-full md:w-1/5">
           <h4 className="text-dark mb-[2rem] font-[700]">Kurumsal</h4>
           <ul className="flex flex-col space-y-[0.8rem]">
             {institutional.slice(0, 9).map((item: any) => (
@@ -79,7 +79,7 @@ export function FooterMiddle() {
             ))}
           </ul>
         </div>
-        <div className="w-1/5">
+        <div className="w-1/5 hidden md:block">
           <div className="flex flex-col space-y-4 text-clay bg-smoke  shadow-md border border-gray-300 p-4 rounded-lg">
             <Image
               width={400}
@@ -91,7 +91,7 @@ export function FooterMiddle() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto flex border-t-2 border-primary py-6 justify-between items-center">
+      <div className="container mx-auto flex border-t-2 border-primary py-6 justify-between items-center px-8 md:px-0">
         <div className="flex items-center space-x-4">
           <span className="text-dark font-[700]">Bizi Arayın</span>
           <PhoneIcon className="w-8 text-dark" />
