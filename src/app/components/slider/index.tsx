@@ -74,7 +74,7 @@ export default function Slider({
       </div>
       <div className="container mx-auto items-center flex">
         <button
-          className={`hidden md:block ${left} -ml-12 ${
+          className={`z-50 hidden md:block ${left} -ml-12 ${
             navVisible
               ? "opacity-100"
               : "opacity-0 transition-opacity duration-500"
@@ -134,7 +134,7 @@ export default function Slider({
           ))}
         </Swiper>
         <button
-          className={`hidden md:block ${right} -mr-12 ${
+          className={`z-50 hidden md:block ${right} -mr-12 ${
             navVisible
               ? "opacity-100"
               : "opacity-0 transition-opacity duration-500"
