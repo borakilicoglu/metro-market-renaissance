@@ -1,5 +1,3 @@
-import React from "react";
-
 export function FooterBottom() {
   return (
     <div className="container mx-auto bg-white flex items-center justify-between py-6 px-8 md:px-0">
